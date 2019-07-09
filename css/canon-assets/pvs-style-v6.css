@@ -1,0 +1,538 @@
+
+
+.link-wrap {
+	width: 90%;
+	margin: 5%;
+	position: absolute;
+	padding: .5rem 0;
+	bottom: 0;
+    left: 0;
+	text-align: center;
+	border-radius: 3px;
+	background: #ee2e24;
+	background: linear-gradient(to bottom, #ee2e24 0%, #a31117 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ee2e24', endColorstr='#a31117',GradientType=0 );
+  }
+
+
+/* ---------- 0_General ---------- */
+#pvsMargin{margin:-25px -15px 0 -15px;}		
+.pvsTextCenter{text-align:center;}		
+.pvsPad50{padding:0 0 50px 0;}
+.pvsPad10TopBttm{padding:10px 0;}
+.pvsPad20TopBttm{padding:20px 0;}
+.pvsPad50TopBttm{padding:50px 0;}
+.pvsPad13PerLeft{padding-left:13%;}
+.pvsPad13PerRight{padding-right:13%;}
+.pvsDisclaimer{font-size:.8em !important;}
+.pvsDisclaimer a{font-size:1em !important;}
+
+/* ----- Backgrounds ----- */
+.pvsDarkGrayBkg{
+	background-color:#333;
+	color:#fff;
+}
+
+.pvsGrayBkg{background-color:#f7f7f7;}
+
+/* .pvsFLex{display:flex;}
+.pvsFlex .pvsLensCat{flex:1;} */
+
+/* ----- Buttons ----- */
+.pvsRedBttn{
+	background-color:#ee1b22;
+	color:#fff;
+	border:1px solid #ee1b22;
+	transition:.3s ease-in-out;
+	width:90%;
+	height:25px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	margin:5%;
+}
+
+.pvsRedBttn:hover{
+	background-color:#cc0000;
+	border:1px solid #cc0000;
+}
+
+.pvsWhiteBttn{
+	background-color:transparent;
+	color:#fff;
+	border:1px solid #fff;
+	transition:.3s ease-in-out;
+	width:130px;
+	height:30px;
+}
+
+.pvsWhiteBttn:hover{
+	background-color:#fff;
+	color:#000;
+}
+
+.pvsWhiteCSOBttn{
+	background-color:transparent;
+	color:#fff;
+	border:1px solid #fff;
+	transition:.3s ease-in-out;
+	width:115%;
+	height:40px;
+}
+
+.pvsWhiteCSOBttn:hover{
+	background-color:#fff;
+	color:#000;
+}
+
+.pvsCRedBttn{
+	background-color:#800020;
+	transition:.3s ease-in-out;
+	border:1px solid #800020;
+	color:#fff;			
+}
+
+.pvsCRedBttn:hover{
+	background-color:#cc0000;
+	border:1px solid #cc0000;
+}		
+
+/* ---------- 1_Overview ---------- */
+#pvsCallout{
+	width:60%;
+	margin:0 auto;
+}
+
+/* ----- Carousel ----- */
+#pvsMargin .carousel-indicators{bottom:10px;}
+
+#pvsMargin #myCarousel .controls{
+	display:none;
+	transition:.3s ease-in-out;
+}
+
+.pvsControlWhite span{color:#fff;}		
+#pvsMargin #myCarousel:hover .controls{display:inherit;}
+
+#firstimage, #secondimage, #thirdimage, #fourthimage, #fifthimage{
+	display:block;
+	height:0;
+	padding-bottom:30.26%;
+	background-size:100% !important;
+	/* text-indent: -9999px; */
+}
+
+/* ----- Banner Desktop Images ----- */
+#firstimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/downloads/profiles/Pro_portal_Profiles_1900x575.jpg) no-repeat;}
+#secondimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/bctv/4k-uhd-xs-broadcast-lenses-040218-d.jpg) no-repeat;}
+#thirdimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/cinema-eos/c700/portal_c700ff_1900x575.jpg) no-repeat;}
+#fourthimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/cinema-lenses/cn-e20mm/portal_cne20_1900x575.jpg) no-repeat;}
+#fifthimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/4k-displays/portal_dp_1900x575.jpg) no-repeat;}
+
+.pvsWidth{
+	/* width:75%; */
+	margin:0 auto;
+	overflow:auto;
+}
+		
+#pvsHR{
+	border:2px solid #ee1b22;
+	width:30px;
+}
+
+.pvsProducts{
+	float:left; 
+	width:14%;
+	text-align:center;
+}
+
+.pvsProducts a h4{color:#000;}
+.pvsProducts a:hover{text-decoration:none;}
+.pvsProducts span{display:inline-block; margin:0;}
+.pvsProducts span:after{
+	display:block;
+	content:'';
+	border-bottom:solid 2px #ee1b22;
+	transform:scaleX(0);
+	transition:transform 250ms ease-in-out;
+}
+
+.pvsProducts a:hover span:after{transform:scaleX(1);}
+
+@media only screen and (max-width:1350px){		
+	.pvsProducts{width:25%;}
+}
+
+/* ---------- 2_Lenses ---------- */
+#pvsLensBanner{
+	background: -webkit-linear-gradient(left, #000, #581d23, #581d23);
+	background: -o-linear-gradient(right, #000, #581d23, #581d23);
+	background: -moz-linear-gradient(right, #000, #581d23, #581d23);
+	background: linear-gradient(to right, #000, #581d23, #581d23);
+	color: #fff;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.pvsLensCat{
+	float:left;
+	width:24%;
+	height:545px;
+	border:1px solid #adadad;
+	padding:0 20px 20px 20px;
+	margin:.5%;
+	position:relative
+}
+
+.pvsLensCat2{height:500px;}
+
+.pvsLensCat a:hover, .pvsLensCat3 a:hover{
+	text-decoration:none;
+	color:#000;
+}
+
+.pvsLensCat3{
+	float:left;
+	width:32%;
+	height:560px;
+	border:1px solid #adadad;
+	padding:0 20px 20px 20px;
+	margin:.5%;
+	position:relative;
+}		
+
+.pvsLensCallout{
+	float:left;
+	width:74%;
+	height:545px;
+	border:1px solid #adadad;
+	padding:0 20px 20px 20px;
+	margin:.5%;
+	position:relative;
+}
+
+#pvsLensCallout{
+	padding:50px 0 70px 0;
+	background-color:#000;
+	color:#fff;
+}
+
+#pvsLensCallout2{
+	padding:0;
+	background:linear-gradient(to bottom, #39393b, #333335, #212123, #222222);
+	color:#fff;
+}
+
+#pvsCallouts .col-sm-4{padding:10px;}
+
+@media only screen and (max-width:1742px){
+	.pvsLensCat{height:565px;} 
+	.pvsLensCat2{height:505px;}
+}		
+
+@media only screen and (max-width:1455px){
+	.pvsLensCat{height:585px;}
+	.pvsLensCat2{height:510px;}			
+}		
+
+@media only screen and (max-width:1300px){
+	.pvsLensCat{width:32%; height:525px;}
+	.pvsLensCatLast2{width:48.5%;}						
+}		
+
+@media only screen and (max-width:1199px){.pvsLensCat{height:545px;}}		
+@media only screen and (max-width:1160px){
+	.pvsLensCat{height:565px;}
+	.pvsLensCat2{height:515px;}
+}		
+@media only screen and (max-width:1045px){
+	.pvsLensCat{height:585px;}
+	.pvsLensCat2{height:515px;}
+}
+
+/* ---------- 3_Support ---------- */
+.pvsSpanRed{color:#cc0000 !important;}
+#pvsSupService .col-md-4{padding:0; margin:0 0 5px 0;}
+#pvsSupFocused h3{padding:10px;}
+#pvsSupBttn1{margin-right:50px !important;}
+/* #pvsSupBttn2{margin-right:5px !important;} */
+.pvsSupSocial{padding:0;}		
+.pvsSupSocial div{padding:0;}
+.pvsSupSocial .col-md-2{width:14.2%;}
+.pvsSupSocial .col-sm-4{padding:0 50px 0 0;}
+#pvsSupList{padding:0; float:left;}
+#pvsSupList li{
+	list-style-type:none;
+	padding:5px;
+}
+
+@media only screen and (max-width:1200px){		
+	#pvsSupFocused .col-lg-3{height:300px;}
+}
+
+@media only screen and (max-width:1300px){
+	.pvsSupSocial .col-md-2{width:22%;}
+	#pvsSupBttn1{margin-right:40px !important;}	
+	#pvsPromos .table{width:100% !important;}		
+}
+
+/* ---------- 4_Promotions ---------- */
+#pvsPromos .table{width:50%;}
+.pvsPromosNoPadLeft .table, .pvsPromosNoPadRight .table{width:100% !important;}
+#pvsPromos a{color:#cc0000;}
+#pvsPromos .panel-heading a{color:#000;}
+.pvsPromosTableHead{
+	background-color:#800020 !important; 
+	color:#fff;
+}
+
+.pvsPromosSub{font-size:.9em;}
+.pvsPromosNoPadLeft{padding-left:0;}
+.pvsPromosNoPadRight{padding-right:0;}
+
+.panel-default>.panel-heading {
+  color: #333;
+  background-color: #fff;
+  border-color: #e4e5e7;
+  padding: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.panel-heading h4{margin:0;}
+
+.panel-default>.panel-heading a {
+  display: block;
+  padding: 10px 15px;
+}
+
+.panel-default>.panel-heading a:after {
+  content: "";
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  float: right;
+  transition: transform .25s linear;
+  -webkit-transition: -webkit-transform .25s linear;
+}
+
+.panel-default>.panel-heading a[aria-expanded="false"]{background-color:#f7f7f7;}		
+.panel-default>.panel-heading a[aria-expanded="true"] {background-color: #eee;}
+
+.panel-default>.panel-heading a[aria-expanded="true"]:after {
+  content: "\2212";
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.panel-default>.panel-heading a[aria-expanded="false"]:after {
+  content: "\002b";
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.accordion-option {
+  width: 100%;
+  float: left;
+  clear: both;
+  margin: 15px 0;
+}
+
+.accordion-option .title {
+  font-size: 20px;
+  float: left;
+  padding: 0;
+  margin: 0;
+}	
+
+/* ---------- 6_Shot on Canon ---------- */
+#pvsMovie{
+	margin:0 auto;
+	width:100%;
+	overflow:auto;
+	background-color:#000;
+	color:#fff;
+}
+
+#pvsMovie img{
+	border:2px solid black;
+	transition:.1s ease-in-out;
+}
+
+#pvsMovie img:hover{border:2px solid white;}
+
+.pvsMovielist{
+	float:left;
+	width:16.66%;
+	/* padding:.27%; */
+}
+
+/* ----- Vertical Alignment ----- */
+/* @media screen and (min-width: 769px) { */
+	.pvsFlex{
+		display:flex;
+		/* align-items:center; */
+		justify-content:center;
+	}
+	
+	.pvsFlex img{width:100%;}
+/* } */
+
+#pvsMovie, #pvsShotlist{padding:20px 0;} 
+#pvsHR{
+	color:#cc0000;
+	width:10%;
+}
+
+/* ---------- 5_Download Logo ---------- */
+#pvsLogoDownload{overflow:auto;}
+.pvsLogoDownload{
+	float:left;
+	width:32%;
+	margin:5px;
+	border:1px solid #adadad;
+	min-height:286px;
+}
+
+.pvsLogoDownload div, .pvsLogoDownload2 div{padding:10%;}
+.pvsLogoDownload section, .pvsLogoDownload2 section{text-align:center;}
+
+.pvsLogoDownload2{
+	float:left;
+	width:48.4%;
+	margin:5px;
+	border:1px solid #adadad;
+	min-height:286px;
+}
+
+/* ---------------------------- */
+/* ---------- Tablet ---------- */
+/* ---------------------------- */
+@media only screen and (max-width: 991px){
+
+	/* ---------- 0_General ---------- */
+	.pvsPad13PerLeft{padding-left:8%;}
+	.pvsPad13PerRight{padding-right:8%;}
+	.pvsDisplayNone{display:none;}
+	.pvsPad50TopBttm{padding:10px;}
+	#pvsSupBttn1{margin-right:0 !important;}
+	
+	/* ----- Buttons ----- */			
+	.pvsWhiteCSOBttn{width:99%;}
+
+	/* ---------- 1_Overview ---------- */
+	/* .pvsWidth{width:85%;}	 */
+	#pvsMargin .carousel-indicators{bottom:0;}
+
+	#firstimage, #secondimage, #thirdimage, #fourthimage, #fifthimage{padding-bottom:58.08%;}			
+
+	/* ----- Banner Tablet Images ----- */
+	#firstimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/downloads/profiles/Pro_portal_Profiles_990x575.jpg) no-repeat;}
+	#secondimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/bctv/4k-uhd-xs-broadcast-lenses-040218-t.jpg) no-repeat;}
+	#thirdimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/cinema-eos/c700/portal_c700ff_990x575.jpg) no-repeat;}
+	#fourthimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/cinema-lenses/cn-e20mm/portal_cne20_990x575.jpg) no-repeat;}
+	#fifthimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/4k-displays/portal_dp_990x575.jpg) no-repeat;}
+	
+	/* ---------- 2_Lenses ---------- */
+	#pvsCallout{width:80%;}			
+	.pvsLensCat{width:32%; height:575px;}
+	.pvsLensCat2{height:515px;}
+	.pvsLensCatLast2{width:48.5%;}
+	
+	@media only screen and (max-width:922px){
+		.pvsLensCat{height:595px;}
+		.pvsLensCat2{height:515px;}
+	}
+	
+	@media only screen and (max-width:804px){
+		.pvsLensCat{height:615px;}
+		.pvsLensCat2{height:515px;}
+	}
+	
+	/* ---------- 3_Support ---------- */
+	#pvsSupFocused .col-lg-3{height:320px;}
+	
+	/* ---------- 5_Download ---------- */
+	.pvsLogoDownload, .pvsLogoDownload2{width:48%;}
+}
+
+/* ---------------------------- */
+/* ---------- Mobile ---------- */
+/* ---------------------------- */
+@media only screen and (max-width: 768px){			
+	
+	/* ---------- 0_General ---------- */	
+	#pvsBody{padding-top:72px;}
+	.pvsPad13PerLeft{padding-left:2%;}
+	.pvsPad13PerRight{padding-right:2%;}
+	.pvsNoBr{white-space:nowrap !important;}
+					
+	/* ---------- 1_Overview ---------- */
+	.pvsWidth{width:98%;}	
+	.pvsProducts{width:50%;}
+
+	#firstimage, #secondimage, #thirdimage, #fourthimage, #fifthimage{
+		padding-bottom:74.87%;
+	}			
+
+	/* ----- Banner Tablet Images ----- */
+	#firstimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/downloads/profiles/Pro_portal_Profiles_768x575.jpg) no-repeat;}
+	#secondimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/bctv/4k-uhd-xs-broadcast-lenses-040218-m.jpg) no-repeat;}
+	#thirdimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/cinema-eos/c700/portal_c700ff_768x575.jpg) no-repeat;}
+	#fourthimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/cinema-lenses/cn-e20mm/portal_cne20_768x575.jpg) no-repeat;}
+	#fifthimage {background: url(https://downloads.canon.com/nw/camera/misc-pages/pro-portal/imgs/home/4k-displays/portal_dp_768x575.jpg) no-repeat;}		
+
+	/* ---------- 2_Lenses ---------- */
+	.pvsPad13PerLeft h1{font-size:2em;}
+	#pvsLensBanner{margin-top:55px;}
+	
+	.pvsLensCat, .pvsLensCat3{
+		width:49%; 
+		height:auto;
+		text-align:center;
+		background-color:#f7f7f7;
+	}		
+	
+	.pvsLensCatMbl{height:270px;}
+	.pvsLensCatLast{width:99%;}			
+	.pvsLensCat h3, .pvsLensCat3 h3{font-size:1em;}			
+	.pvsLensCat section, .pvsLensCat3 section, .pvsPad13PerLeft p{display:none;}
+	#pvsCallout{width:98%;}	
+	#pvsLensCallout{padding:20px 0 40px 0;}
+	
+	/* ---------- 3_Support ---------- */
+	#pvsSupFocused h2, #pvsSupService h2{text-align:center;}
+	#pvsSupFocused h4{padding-bottom:20px;}
+	.pvsSupSocial .col-md-2{width:14%;}
+	.pvsSupSocial h2{text-align:center;}
+	.pvsSupSocial .col-sm-4{padding:0 0 20px 0;}
+	
+	/* ---------- 4_Promotions ---------- */
+	.pvsPromosNoPadLeft, .pvsPromosNoPadRight{padding:0;}
+}
+
+
+@media only screen and (max-width: 660px){
+	.pvsLensCatMbl{height:250px;}
+	
+	/* ---------- 5_Download ---------- */
+	.pvsLogoDownload, .pvsLogoDownload2{
+		width:98%;
+		min-height:auto;
+	}
+	
+	.pvsLogoDownload div, .pvsLogoDownload div{padding:5%;}
+	
+	/* ---------- 6_Shot on Canon ---------- */
+	#pvsMovie {margin-top:50px;}
+	#pvsMovie h2 {text-align:center;}
+}
+@media only screen and (max-width: 600px){.pvsLensCatMbl{height:230px;}}
+@media only screen and (max-width: 520px){.pvsLensCatMbl{height:200px;}}

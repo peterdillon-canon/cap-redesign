@@ -1,0 +1,73 @@
+// *, body { transition: all 0.3s ease; }
+
+.ajax-button {
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    position: relative;
+    height: 50px;
+    float: right;
+    top: 50%;
+    text-align: center;
+    background-color: $primary-hover;
+    width: 180px;
+    &:hover {
+        background-color: $primary-hover;
+        cursor: not-allowed;
+    }
+}
+.submit {
+    transition: all 0.3s ease;
+    appearance: none;
+    width: 180px;
+    height: 50px;
+    background-color: $primary;
+    border: 0;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
+    &:disabled {
+        background-color: $primary-disabled;
+        cursor: not-allowed;
+    }
+}
+.loading {
+    transition: all 0.3s ease;
+    font-size: 0;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 0;
+    border: 3px solid #FFFFFF;
+    border-bottom: 3px solid rgba(255,255,255,0.0);
+    border-left: 3px solid rgba(255,255,255,0.0);
+    background-color: transparent !important;
+    animation-name: rotateAnimation;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-iteration-count: infinite;
+}
+@keyframes rotateAnimation {
+    0%   {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
+.custom-anim {
+    transition: all 0.3s ease;
+    color:#ffffff;
+    font-size:18px !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -9px;
+    margin-top: -9px;
+    transform: scaleX(0) !important;
+}
+.finish {
+    transform:scaleX(1) !important;
+}
+.hide-loading {
+    opacity: 0;
+    transform: rotate(0deg) !important;
+    transform: scale(0) !important;
+}

@@ -1,0 +1,844 @@
+<!doctype html>
+<html  lang="en" class="win chrome chrome71 webkit webkit5">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Canon Driver Download Configurator</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Canon CSS Assets -->
+    <link rel="stylesheet" href="css/canon-assets/bootstrap.css">
+    <link rel="stylesheet" href="css/canon-assets/canon-styles.css">
+    <link rel="stylesheet" href="css/canon-assets/cusa-home-style-v12.css"> 
+    <link rel="stylesheet" href="css/canon-assets/cla-custom.css">
+
+    <!-- Existing Canon JS Assets -->
+    <script src="js/jquery.include-min.js"></script>
+    <script src="js/jquery.ui-min.js"></script>
+    <script src="js/jquery.mask-min.js"></script>
+    <script src="js/canon.js"></script>
+    <script src="js/wizard.js"></script>
+    <script src="js/js.cookie.min.js"></script>
+
+  </head>
+  <body>
+
+  <div class="overlay-bg" id="loader"></div>
+  <div class="ct">
+    <div class="loader-dots center"><span></span></div>
+  </div>
+  
+  <div class="content" id="browser-content">
+    <div class="closer" >&times;</div>
+    <h3>Locating and installing your download:</h3>
+    <p class="content-desc">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    
+    <div class="row">
+      <div class="col-xs-2">
+        <img class="browser-logo" src="img/chrome-logo.jpg">
+      </div>
+      <div class="col-xs-10">
+          <ul class="overlay-ul">
+            <li>Excepteur sint occaecat cupidatat non proident, deserunt mollit anim id est laborum.</li>
+            <li>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+            <li>Excepteur sint occaecat cupidatat non proident, sunt  anim id est laborum.</li>
+            <li>Excepteur sint occaecat cupidatat non proident.</li>
+          </ul>
+        </div>
+    </div>
+    <div class=" center">
+      <button class="cbtn cbtn-canon-red" id="gotIt">Got it thanks!</button>
+    </div>
+  </div>
+
+  <div class="overlay-bg"></div>
+  <div class="content" id="rate-content">
+    <div class="closer">&times;</div>
+    <h3>Rate This Wizard</h3>
+    <form>
+        <p>Was this wizard helpful?</p>
+        <label>
+          <input type="radio" name="helpful" value="yes">Yes, this was helpful.
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="helpful" value="no">No, this needs improvement.
+        </label>
+        <hr>
+        <p>Please provide comments:</p>
+        <textarea rows="5" id="rate-message"></textarea>
+        <br>
+        <div class="ajax-button">
+            <div class="custom-anim fa fa-check done"></div>
+            <div class="custom-anim fa fa-close failed"></div>
+            <button disabled="disabled" id="submitFeedback" class="submit">Send Feedback</button>
+          </div>
+    </form>
+  </div>
+  
+  <header role="banner" class="site-header navbar">
+
+      <div id="siteControl">
+      <nav class="main-nav navbar navbar-default">
+        <div class="container headerWrapper">
+
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html"></a>
+            <ul class="nav navbar-nav pull-right visible-xs mobile-nav">
+                <a href="#search-form" data-action="toggletarget">
+                    <i class="fa fa-search"></i>
+                </a>
+                <a href="#navbar-left" data-action="toggletarget">
+                    <i class="fa fa-navicon"></i>
+                </a>
+            </ul>
+          </div>
+          <ul id="navbar-left" class="nav navbar-nav navbar-left">
+            <li>
+              <a class="toggleize" href="#section-explore" role="tab" data-toggle="tab" data-toggle-target=".megamenu">
+                Explore</a>
+            </li>
+            <li>
+              <a class="toggleize" href="#section-products" role="tab" data-toggle="tab" data-toggle-target=".megamenu">
+                Products</a>
+            </li>
+            <li>
+              <a class="toggleize" href="#section-learn" role="tab" data-toggle="tab" data-toggle-target=".megamenu">
+                Learn</a>
+            </li>
+            <li>
+              <a class="toggleize" href="#section-support" role="tab" data-toggle="tab" data-toggle-target=".megamenu">
+                Support</a>
+            </li>
+            <li>
+              <a class="toggleize" href="#section-about" role="tab" data-toggle="tab" data-toggle-target=".megamenu">
+                About</a>
+            </li>
+            <li>
+              <a class="toggleize visible-xs hidden-sm hidden-md hidden-lg" href="#section-contactcanon" role="tab" data-toggle="tab" data-toggle-target=".megamenu">
+                Contact</a>
+            </li>
+          </ul>
+          <a class="search-toggle" href="#search-form" data-action="toggletarget">
+              <span class="search-label"><i class="fa fa-search"></i></span> SEARCH
+          </a>
+          <form action="/internet/portal/us/home/searchresults" id="search-form" class="navbar-form navbar-right search-form" role="search">
+            <input type="hidden" id="seach-area" value="">
+            <div class="form-group">
+              <input id="search-button" name="query" type="text" class="form-control skipSqlFiltering" autocomplete="off" placeholder="CHOOSE A SEARCH AREA">
+              <a href="#search-dropdown" class="dropdown-trigger" data-action="toggletarget">
+                <i class="fa fa-angle-down"></i>
+              </a>
+              <section name="searchTab" id="search-dropdown" class="search-dropdown cbg-white cbr-light-gray-3">
+                <ul>
+                  <li><a href="#" onclick="updatePlaceHolder('search-button', 'Explore'.toUpperCase());return false;">Explore</a></li>
+                  <li><a href="#" onclick="updatePlaceHolder('search-button', 'Products'.toUpperCase());return false;">Products</a></li>
+                  <li><a href="#" onclick="updatePlaceHolder('search-button', 'Learn'.toUpperCase());return false;">Learn</a></li>
+                  <li><a href="#" onclick="updatePlaceHolder('search-button', 'Support'.toUpperCase());return false;">Support</a></li>
+                  <li><a href="#" onclick="updatePlaceHolder('search-button', 'About'.toUpperCase());return false;">About</a></li>
+                  <li><a href="#" onclick="updatePlaceHolder('search-button', 'Knowledge Base'.toUpperCase());return false;">Knowledge Base</a></li>
+                </ul>
+              </section>
+            </div>
+            <input type="hidden" name="searchTab" id="searchTab" value="">
+            <button type="submit" class="cbtn cbtn-canon-red">
+              <span class="fa fa-search"></span>
+            </button>
+          </form>
+
+        </div>
+      </nav>
+    </div><!-- siteControl -->
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumbs cbg-light-gray-1 hidden-xs" style="display: block;">
+      <div class="container headerWrapper">
+        <ol id="breadcrumb_list" class="breadcrumb pull-left">
+          <li class="cf-gray-1">Home</li>
+        </ol>
+      </div>
+    </section>
+    <!-- / Breadcrumb -->
+      
+    <section class="megamenu" id="megamenu">
+      <div class="megamenu-wrapper tab-content">
+         
+        <section class="tab-pane megamenu-section fade cbg-dark-gray-2" role="tabpanel" id="section-explore">
+          <span class="section-title hidden-sm hidden-xs"> Consumer home &amp; Office</span>
+          <section class="menu-tab-left">
+            <ul class="category-list">
+              <li class="parent"><a href="#" data-toggle="tab">New Products</a></li>
+              <li class="parent"><a href="#">Products</a></li>
+              <li><a href="#001" data-toggle="tab">Cameras</a></li>
+              <li><a href="#002" data-toggle="tab">Camcorders</a></li>
+              <li><a href="#" data-toggle="tab">Printers &amp; Multifunction</a></li>
+              <li><a href="#" data-toggle="tab">Scanners</a></li>
+              <li><a href="#" data-toggle="tab">Fax Machines</a></li>
+              <li><a href="#" data-toggle="tab">Calculators</a></li>
+              <li><a href="#" data-toggle="tab">Projectors</a></li>
+              <li><a href="#" data-toggle="tab">Presenters</a></li>
+              <li><a href="#" data-toggle="tab">Binoculars</a></li>
+              <li class="parent"><a href="#">Mobile Apps</a></li>
+              <li class="parent"><a href="#">Supplies &amp; Accessories</a></li>
+              <li class="parent"><a href="#">Support &amp; Drivers</a></li>
+              <li class="parent"><a href="#">Where To Buy</a></li>
+              <li class="parent"><a href="#">News</a></li>
+              <li class="parent"><a href="#">Resources &amp; Learning</a></li>
+              <li class="parent"><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+          </section>
+          <section class="menu-tab-right tab-content cbg-gray-1">
+            <div id="001" class="subcategory-list-wrapper tab-pane fade" role="tabpanel">
+              <header class="visible-xs-block cbg-light-gray-1">
+                <span class="subcategory-title">Cameras</span>
+                <button rel="close-subcategory" class="cbtn-canon-red btn-close"> ×</button>
+              </header>
+              <ul class="subcategory-list">
+                <li><a href="listing.html">PowerShot Cameras</a></li>
+                <li><a href="#">EOS Cameras</a></li>
+                <li><a href="#">Lenses</a></li>
+                <li><a href="#">Speedlite Flash Lineup</a></li>
+                <li><a href="#">Wireless File Transmitters</a></li>
+                <li><a href="#">Connect Station</a></li> 
+              </ul>
+            </div>
+            <div id="002" class="subcategory-list-wrapper tab-pane fade" role="tabpanel">
+                <header class="visible-xs-block cbg-light-gray-1">
+                  <span class="subcategory-title">Camcorders</span>
+                  <button rel="close-subcategory" class="cbtn-canon-red btn-close">×</button>
+                </header>
+              <ul class="subcategory-list">
+                <li><a href="#">Consumer Camcorders</a></li>
+                <li><a href="#">Professional Camcorders</a></li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+        <section class="tab-pane megamenu-section fade cbg-dark-gray-2" role="tabpanel" id="section-products">
+          <span class="section-title hidden-sm hidden-xs">Office Equipment</span>
+          <section class="menu-tab-left">
+            <ul class="category-list">
+              <li class="parent"><a href="#">New products</a></li>
+              <li><a href="#1c15eb5becdc44bd9dce51ccc8b88ae8" data-toggle="tab">Products</a></li>
+              <li><a href="#003" data-toggle="tab">Hardware</a></li>
+              <li><a href="#d1a40701afd1478c8211437259baaa0b" data-toggle="tab">Software</a></li>
+              <li><a href="#62e145df8d3145ea93e71b30a13b154c" data-toggle="tab">Services</a></li>
+              <li><a href="#a2408872ab7a49e69a5257f6987531a3" data-toggle="tab">Solutions</a></li>
+              <li><a href="#f0939de31da144db95c66b7cbef771fb" data-toggle="tab">Mobile Apps</a></li>
+              <li><a href="#4fc4b04dc1974e688543c67c34a99f82" data-toggle="tab">Supplies &amp; Accessories</a></li>
+              <li><a href="#616b6a71a3874875ba06b89fa633a1d6" data-toggle="tab">Support &amp; Drivers</a></li>
+              <li><a href="#e823cd69017b407593f073407b36bb1b" data-toggle="tab">Where To Buy</a></li>
+              <li><a href="#c06f40fa198b488fb23080f1aa1718ca" data-toggle="tab">News</a></li>
+              <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+          </section>
+          <section class="menu-tab-right tab-content cbg-gray-1">
+            <div id="003" class="subcategory-list-wrapper tab-pane fade" role="tabpanel">
+              <header class="visible-xs-block cbg-light-gray-1">
+                <span class="subcategory-title">Hardware</span>
+                <button rel="close-subcategory" class="cbtn-canon-red btn-close">×</button>
+              </header>
+              <ul class="subcategory-list">
+                <li><a href="#">Multifunction Printers/Copiers</a></li>
+                <li><a href="#">Facsimile</a></li>
+                <li><a href="#">Printers</a></li>
+                <li><a href="#">Large Format Printers</a></li>
+                <li><a href="#">Océ Large Format Printers</a></li>
+                <li><a href="#">Océ Large Format Scanners</a></li>
+                <li><a href="#">Scanners</a></li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        
+        <section class="tab-pane megamenu-section fade cbg-dark-gray-2" role="tabpanel" id="section-learn">
+          <span class="section-title hidden-sm hidden-xs">Production Printing</span>
+          <section class="menu-tab-left">
+            <ul class="category-list">
+              <li class="parent"><a href="#/" target="_self">New Products</a></li>
+              <li><a href="#6952357f1936418d8c78e0fdf7f67a80" data-toggle="tab">Products</a></li>
+              <li><a href="#004" data-toggle="tab">Digital Presses</a></li>
+              <li><a href="#" data-toggle="tab">Continuous Feed</a></li>
+              <li><a href="#" data-toggle="tab">Workflow Solutions</a></li>
+              <li><a href="#4fc4b04dc1974e688543c67c34a99f82" data-toggle="tab">Supplies &amp; Accessories</a></li>
+              <li><a href="#616b6a71a3874875ba06b89fa633a1d6" data-toggle="tab">Support &amp; Drivers</a> </li>
+              <li><a href="#e823cd69017b407593f073407b36bb1b" data-toggle="tab">Where To Buy</a></li>
+              <li><a href="#c06f40fa198b488fb23080f1aa1718ca" data-toggle="tab">News</a></li>
+              <li><a href="contact-us.html">Contact Us</a></li>
+            </ul>
+          </section>
+          <section class="menu-tab-right tab-content cbg-gray-1">
+            <div id="004" class="subcategory-list-wrapper tab-pane fade" role="tabpanel">
+              <header class="visible-xs-block cbg-light-gray-1">
+                <span class="subcategory-title">Digital Presses</span>
+                <button rel="close-subcategory" class="cbtn-canon-red btn-close">×</button>
+              </header>
+              <ul class="subcategory-list">
+                <li><a href="#">Black and White Digital Presses</a></li>
+                <li><a href="#">Color Digital Presses</a></li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+        <section class="tab-pane megamenu-section fade cbg-dark-gray-2" role="tabpanel" id="section-support">
+          <span class="section-title hidden-sm hidden-xs">Professional Imaging Products</span>
+          <section class="menu-tab-left">
+            <ul class="category-list">
+              <li class="parent"><a href="#">New Products</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Cameras &amp; Camcorders</a></li>
+              <li><a href="#005" data-toggle="tab">Lenses</a></li>
+              <li><a href="#">Printers</a></li>
+              <li><a href="#">Projectors</a></li>
+              <li><a href="#">Presenters</a></li>
+              <li><a href="#">IS Binoculars</a></li>
+            </ul>
+          </section>
+          <section class="menu-tab-right tab-content cbg-gray-1">
+            <div id="005" class="subcategory-list-wrapper tab-pane fade" role="tabpanel">
+              <header class="visible-xs-block cbg-light-gray-1">
+                <span class="subcategory-title">Lenses</span>
+                <button rel="close-subcategory" class="cbtn-canon-red btn-close">×</button>
+              </header>
+              <ul class="subcategory-list">
+                <li><a href="#">EF and RF Lenses</a></li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+        <section class="tab-pane megamenu-section fade cbg-dark-gray-2" role="tabpanel" id="section-about">
+          <span class="section-title hidden-sm hidden-xs"> Workflow Solutions</span>
+          <section class="menu-tab-left">
+            <ul class="category-list">
+              <li class="parent"><a href="/internet/portal/us/home/about/">New Products</a></li>
+              <li><a href="#" data-toggle="tab">Products</a></li>
+              <li><a href="#006" data-toggle="tab">Software</a></li>
+              <li><a href="#" data-toggle="tab">Services</a></li>
+              <li><a href="#" data-toggle="tab">Solutions</a></li>
+              <li><a href="#" data-toggle="tab">Where To buy</a></li>
+              <li><a href="#" data-toggle="tab">News</a></li>
+              <li><a href="contact-us.html">CONTACT US</a></li>
+            </ul>
+          </section>
+          <section class="menu-tab-right tab-content cbg-gray-1">
+            <div id="006" class="subcategory-list-wrapper tab-pane fade" role="tabpanel">
+              <header class="visible-xs-block cbg-light-gray-1">
+                <span class="subcategory-title">Software</span>
+                <button rel="close-subcategory" class="cbtn-canon-red btn-close">×</button>
+              </header>
+              <ul class="subcategory-list">
+                <li><a href="#">Information Management and Workflow</a></li>
+                <li><a href="#">Document Distribution and Management</a></li>
+                <li><a href="#">Output Management and Cost Control</a></li>
+                <li><a href="#">Network Device Security and Management</a></li>
+                <li><a href="#">Accessibility Solutions</a></li>
+                <li><a href="#">Mobile Printing</a></li>
+              </ul>
+            </div>
+          </section>
+        </section>
+
+      </div>
+    </section>
+
+  </header><!-- / site-header  -->
+
+  <section id="hp-cusa-wrap">
+
+    <div class="output">
+      <h5>Your Selection</h5>
+      <ul>
+        <li>
+          <div class="selection">Series:</div>
+          <div id="seriesValue" class="selectionValue">-</div>
+        </li>
+        <li>
+          <div class="selection">Model:</div>
+          <div id="modelValue" class="selectionValue">-</div>
+        </li>
+        <li>
+          <div class="selection">OS:</div>
+          <div id="osValue" class="selectionValue">-</div>
+        </li>
+        <li>
+          <div class="selection">Package:</div>
+          <div id="packageValue" class="selectionValue">-</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <h2 class="text-center extra-margin">Driver Download Wizard</h2>
+      </div>
+    </div>
+    
+    <form role="form" id="configurator">
+      <!-- PRODUCT SLIDER -->
+      <article id="hp-leadin-sect" class="wizard-step-product">
+        <div id="hp-top-banner" class="row">
+            <div class="hp-leadin-container no-padding col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="wpthemeControlBody wpthemeOverflowAuto wpthemeClear">
+                <div class="ribbon carousel slide" id="productCarousel" data-ride="carousel"> 
+
+                  <ol class="carousel-indicators">
+                      <li data-target="#productCarousel" data-slide-to="0" class="active"></li>
+                      <li data-target="#productCarousel" data-slide-to="1" class=""></li>
+                      <li data-target="#productCarousel" data-slide-to="2" class=""></li>
+                  </ol>
+                  <div class="carousel-inner">
+
+                    <div class="item active">
+                      <article>
+                        <div class="row hp-wrapper text-center">
+
+                            <div class="radio">
+                              <div class="row">
+                                  <div class="col-xs-7 clearfix">
+                                    <img src="../img/hover-printers/generic-printer.png" id="series-img" class="placeholder printer-img">
+                                  </div>
+                                  <div class="col-xs-5">
+                                    <h3 class="choice-header">Please select a product series, then click NEXT</h3>
+                                    <ul class="pull-left custom-ul">
+                                      <li>
+                                        <label id="mbSeries" onclick="setImage('series-img','mb-series')">
+                                            <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mb-series.png'>">
+                                              <input id="mb-series" type="radio" name="series" value="MB Series"> MB Series
+                                            </span>
+                                        </label>
+                                      </li>
+                                      <li>
+                                        <label id="mgSeries" onclick="setImage('series-img','mg-series')">
+                                          <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mg-series.png'>">
+                                            <input id="mg-series" type="radio" name="series"  value="MG Series"> MG Series
+                                          </span>
+                                        </label>
+                                      </li>
+                                      <li>
+                                        <label id="mxSeries" onclick="setImage('series-img','mx-series')">
+                                          <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mx-series.png'>">
+                                            <input id="mx-series" type="radio" name="series" value="MX Series"> MX Series
+                                          </span>
+                                        </label>
+                                      </li>
+                                      <li>
+                                        <label id="tsSeries" onclick="setImage('series-img','ts-series')">
+                                          <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/ts-series.png'>">
+                                            <input id="ts-series" type="radio" name="series" value="TS Series"> TS Series
+                                          </span>
+                                        </label>
+                                      </li>
+                                      <li>
+                                          <label id="trSeries" onclick="setImage('series-img','tr-series')">
+                                              <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/tr-series.png'>">
+                                                <input id="tr-series" type="radio" name="series" value="TR Series"> TR Series
+                                              </span>
+                                          </label>
+                                        </li>
+                                      <li>
+                                          <label id="gSeries" onclick="setImage('series-img','g-series')">
+                                              <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/g-series.png'>">
+                                                <input id="g-series" type="radio" name="series" value="G Series"> G Series
+                                              </span>
+                                          </label>
+                                      </li>
+                                    </ul>
+                                  </div>
+                              </div>
+                            </div>
+
+                        </div>
+                      </article>
+                    </div>
+                    
+                    <div class="item">
+                      <article>
+                        <div class="row hp-wrapper text-center">
+
+                            <div class="radio">
+                                <div class="row">
+                                    <div class="col-xs-6 clearfix">
+                                      <img src="../img/hover-printers/generic-printer.png" id="model-img" class="placeholder printer-img">
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <h3 class="choice-header">Please select a product model, then click NEXT</h3>
+                                        <ul class="pull-left custom-ul">
+                                          <li>
+                                            <label id="mb20" onclick="setImage('model-img','mb20')">
+                                              <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mb20.png'>">
+                                                <input id="mb20" type="radio" name="model" value="MB2000-MB2020"> MB2000/MB2020
+                                              </span>
+                                            </label>
+                                          </li>
+                                          <li>
+                                            <label id="mb21" onclick="setImage('model-img','mb21')">
+                                              <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mb21.png'>">
+                                                <input id="mb21" type="radio" name="model" value="MB2100-MB2120"> MB2100/MB2120
+                                              </span>
+                                            </label>
+                                          </li>
+                                          <li>
+                                            <label id="mb23" onclick="setImage('model-img','mb23')">
+                                              <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mb23.png'>">
+                                                <input id="mb23" type="radio" name="model" value="MB2300-MB2320"> MB2300/MB2320
+                                              </span>
+                                            </label>
+                                          </li>
+                                          <li>
+                                            <label id="mb27" onclick="setImage('model-img','mb27')">
+                                              <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mb27.png'>">
+                                                <input id="mb27" type="radio" name="model" value="MB2700-MB2720"> MB2700/MB2720
+                                              </span>
+                                            </label>
+                                          </li>
+                                          <li>
+                                            <label id="mb50" onclick="setImage('model-img','mb50')">
+                                              <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mb50.png'>">
+                                                <input id="mb50" type="radio" name="model" value="MB5000-MB5020"> MB5000/MB5020
+                                              </span>
+                                            </label>
+                                          </li>
+                                          <li>
+                                            <label id="mb51" onclick="setImage('model-img','mb51')">
+                                              <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mb51.png'>">
+                                                <input id="mb51" type="radio" name="model" value="MB5100-MB5120"> MB5100/MB5120
+                                              </span>
+                                            </label>
+                                          </li>
+                                          <li>
+                                            <label id="mb53" onclick="setImage('model-img','mb53')">
+                                              <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mb53.png'>">
+                                                <input id="mb53" type="radio" name="model" value="MB5300-MB5320"> MB5300/MB5320
+                                              </span>
+                                            </label>
+                                          </li>
+                                          <li>
+                                            <label id="mb54" onclick="setImage('model-img','mb54')">
+                                              <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/mb54.png'>">
+                                                <input id="mb54" type="radio" name="model" value="MB5400-MB5420"> MB5400/MB5420
+                                              </span>
+                                            </label>
+                                          </li>
+                                      </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                          </div>
+                      </article> 
+                    
+                    </div>
+
+                    <div class="item">
+                      <article>
+                        <div class="row hp-wrapper text-center">
+                          <div class="row">
+
+                              <div class="col-xs-6 clearfix">
+                                  <img src="../img/hover-printers/generic-os.png" id="os-img" class="placeholder printer-img">
+                              </div>
+                              <div class="col-xs-6">
+                                <h3 class="choice-header">Please confirm your operating system, then click NEXT</h3>
+                                <ul class="pull-left custom-ul">
+                                    <li>
+                                      <label id="windows-logo" onclick="setImage('os-img','windows-logo')">
+                                        <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/windows-logo.png'>">
+                                          <input id="windows-logo" type="radio" name="os" value="Windows"> Windows
+                                        </span>
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label id="apple-logo" onclick="setImage('os-img','apple-logo')">
+                                        <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/apple-logo.png'>">
+                                          <input id="apple-logo" type="radio" name="os" value="Mac 10.8 - 10.11"> Mac OS Ver 10.8-10.11
+                                        </span>
+                                      </label>
+                                    </li>
+                                    <li>
+                                      <label id="apple-logo" onclick="setImage('os-img','apple-logo')">
+                                        <span data-toggle="tooltip" data-html="true" title="<img src='../img/hover-printers/apple-logo.png'>">
+                                          <input id="apple-logo" type="radio" name="os" value="Mac OS Ver 10.12+"> Mac OS Ver 10.12+
+                                        </span>
+                                      </label>
+                                    </li>
+                                </ul>
+                              </div>
+
+                            </div>
+                        </div>
+                      </article> 
+                    </div>
+
+                    <div class="item">
+                        <article>
+                          <div class="row hp-wrapper text-center">
+                              <div class="row">
+                                  <div class="col-xs-6">
+                                      <div class="extra-large-icon">
+                                        <i class="glyphicon glyphicon-compressed"></i>
+                                      </div>
+                                  </div>
+                                  <div class="col-xs-6">
+                                      <h3 class="choice-header">Please select package type, then click NEXT</h3>
+                                      <ul class="pull-left custom-ul rem-margin">
+                                        <li>
+                                          <label>
+                                            <span data-toggle="tooltip" class="wide">
+                                              <input type="radio" name="package" value="Full Package"> Full Driver & Software Package
+                                            </span>
+                                            <div class="desc" title="This file will download and install the Driver, application or manual you need to set up the full functionality of your product">
+                                              This file will download and install the Driver, application or manual you need to set up the full functionality of your product.
+                                            </div>
+                                          </label>
+                                        </li>
+                                        <li>
+                                          <label>
+                                            <span data-toggle="tooltip" class="wide">
+                                              <input type="radio" name="package" value="Driver Only"> Printer Driver
+                                            </span>
+                                            <div class="desc" title="This Driver will provide full printing functionality for your product.">
+                                              This Driver will provide full printing functionality for your product.
+                                            </div>
+                                          </label>
+                                        </li>
+                                    </ul>
+                                  </div>
+                          </div>
+                        </article> 
+                    </div>
+
+                    <div class="item">
+                        <article>
+                          <div class="row hp-wrapper text-center">
+                            <div class="row">
+                              <div class="col-xs-6">
+                                  <div class="extra-large-icon">
+                                    <i class="glyphicon glyphicon-download"></i>
+                                  </div>
+                              </div>
+                              <div class="col-xs-6">
+                                  <h3 class="choice-header">The following full version package has everything you need. It includes:</h3>
+                                  <ul class="pull-left rem-margin">
+                                    <li>
+                                        <ul class="download-details">
+                                          <li>MP Driver</li>
+                                          <li>User's Manual</li>
+                                          <li>My Printer</li>
+                                          <li>Speed Dial Utility</li>
+                                          <li>Quick Utility Toolbox</li>
+                                          <li>Easy-WebPrint EX</li>
+                                          <li>XPS Driver</li>
+                                          <li>MB2000-Full-Windows</li>
+                                        </ul>
+                                      <a href="https://rt.com" target="_new"><img src="/img/download-image.png"></a>
+                                    </li>
+                                </ul>
+                              </div>
+                        </article> 
+                    </div>
+                        
+                  </div>
+
+                      <!-- Controls -->
+                      <a class="left carousel-control" href="#productCarousel" role="button" data-slide="prev"><span class="temp-position fa fa-angle-left"></span></a>
+                      <a class="right carousel-control" href="#productCarousel" role="button" data-slide="next"><span class="temp-position fa fa-angle-right"></span></a>
+                      
+                      <script type="text/javascript">
+                        $(document).ready(function () {
+                          function playcarousel() {
+                              $('#productCarousel .right.carousel-control').trigger('click');
+                          }  
+                          // window.setInterval(playcarousel, 7000);
+                          // $(".productCarousel .item:first-child ").addClass("active"); 
+                        });
+                      </script>
+
+                </div>
+              </div>
+          </div>
+        </div>
+      </article>
+      <!-- / PRODUCT SLIDER -->
+
+      <!-- WIZARD -->
+        <div class="container">
+            <div class="row">
+              <section id="wizard-container">
+                  <div class="wizard">
+                      <div class="wizard-inner">
+                          <div class="connecting-line"></div>
+                          <ul class="nav nav-tabs" role="tablist">
+                              <li role="presentation" class="active">
+                                  <div class="step-label red">Printer Series</div>
+                                  <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab">
+                                      <span class="round-tab">
+                                          <i class="glyphicon glyphicon-th-list"></i>
+                                      </span>
+                                  </a>
+                              </li>
+
+                              <li role="presentation" class="disabled">
+                                  <div class="step-label">Printer Model</div>
+                                  <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab">
+                                      <span class="round-tab">
+                                          <i class="glyphicon glyphicon-print"></i>
+                                      </span>
+                                  </a>
+                              </li>
+
+                              <li role="presentation" class="disabled">
+                                  <div class="step-label">Operating System</div>
+                                  <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab">
+                                      <span class="round-tab">
+                                          <i class="glyphicon glyphicon-modal-window"></i>
+                                      </span>
+                                  </a>
+                              </li>
+
+                              <li role="presentation" class="disabled">
+                                  <div class="step-label">Choose Package</div>
+                                  <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab">
+                                      <span class="round-tab">
+                                          <i class="glyphicon glyphicon-compressed"></i>
+                                      </span>
+                                  </a>
+                              </li>
+
+                              <li role="presentation" class="disabled">
+                                  <div class="step-label">Download!</div>
+                                  <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab">
+                                      <span class="round-tab">
+                                          <i class="glyphicon glyphicon-ok"></i>
+                                      </span>
+                                  </a>
+                              </li>
+                          </ul>
+                      </div>
+      
+                      
+                          <div class="tab-content text-center">
+                              <div class="tab-pane active" role="tabpanel" id="step1">
+                                  <ul class="list-inline action-buttons">
+                                      <li><button type="button" disabled="disabled" class="cbtn cbtn-light-gray-2 prev-step">Previous</button></li>
+                                      <li><button type="button" disabled="disabled" id="saveStep1" class="cbtn cbtn-canon-red next-step">Next</button></li>
+                                  </ul>
+                              </div>
+                              <div class="tab-pane" role="tabpanel" id="step2">
+                                  <ul class="list-inline action-buttons">
+                                      <li><button type="button" class="cbtn cbtn-light-gray-2 prev-step">Previous</button></li>
+                                      <li><button type="button" disabled="disabled" id="saveStep2" class="cbtn cbtn-canon-red next-step">Next</button></li>
+                                  </ul>
+                              </div>
+                              <div class="tab-pane" role="tabpanel" id="step3">
+                                  <ul class="list-inline action-buttons">
+                                      <li><button type="button" class="cbtn cbtn-light-gray-2 prev-step">Previous</button></li>
+                                      <li><button type="button" id="saveStep3" class="cbtn cbtn-canon-red next-step">Next</button></li>
+                                  </ul>
+                              </div>
+                              <div class="tab-pane" role="tabpanel" id="step4">
+                                  <ul class="list-inline action-buttons">
+                                      <li><button type="button" class="cbtn cbtn-light-gray-2 prev-step">Previous</button></li>
+                                      <li><button type="button" disabled="disabled" id="saveStep4" class="cbtn cbtn-canon-red next-step">Next</button></li>
+                                  </ul>
+                              </div>
+                              <div class="tab-pane" role="tabpanel" id="complete">
+                                  <ul class="list-inline action-buttons">
+                                      <li><button type="button" class="cbtn cbtn-light-gray-2 prev-step">Previous</button></li>
+                                      <li><button disabled="disabled" type="button" class="cbtn cbtn-canon-red">Next</button></li>
+                                  </ul>
+                              </div>
+                              <div class="clearfix"></div>
+                          </div>
+                      
+                  </div>
+              </section>
+              </div>
+        </div>
+      <!-- / WIZARD -->
+    </form>
+
+    <hr>
+    <a href="#" id="show-download-overlay">view download popover</a>
+    <br>
+    <a href="#" id="show-rate-wizard-overlay">view rate wizard popover</a>
+    <br><br><br>
+
+  </section><!-- / hp-cusa-wrap -->
+
+  <footer class="cbr-light-gray-3">
+    <div class="links headerWrapper">
+        <section class="links-company col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <ul class="link-list no-side-padding">
+                <li class="link-list">
+                    <a title="" target="" href="#">About Us</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="#">Newsroom</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="#">Careers</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="#">Sustainability</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="#">EPEAT</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="sitemap.html">Sitemap</a>
+                </li>
+            </ul>
+        </section>
+        <section class="links-contact col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <ul class="link-list no-side-padding">
+                <li class="link-list">
+                    <a title="" target="" href="contact-us.html">Contact Us</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="#">Product Registration</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="#">Support &amp; Drivers</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="#">Supplies &amp; Accessories</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="#">Where To buy</a>
+                </li>
+            </ul>
+        </section>
+        <section class="links-legal col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <ul class="link-list no-side-padding">
+                <li class="link-list">
+                    <a title="" target="" href="#">Product Advisories</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="privacy.html">Privacy Statement</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="terms.html">Terms of Use</a>
+                </li>
+                <li class="link-list">
+                    <a title="" target="" href="#">Important Messages</a>
+                </li>
+            </ul>
+        </section>
+      
+        <section class="links-social col-lg-3 col-md-3 col-sm-3 col-xs-12">
+            <ul class="inline-list no-side-padding">
+                <li class="link-list">
+                    <a href="#" target="_blank">Sign up for RSS feeds:<i class="fa fa-rss"></i></a>
+                </li>
+            </ul>
+        </section>
+        <p class="col-xs-12 add-margin-top" style="font-size:12px;">© 2019 Canon U.S.A., Inc. All Rights Reserved. Reproduction in whole or in part without permission is prohibited.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
